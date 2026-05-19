@@ -1,0 +1,181 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Archivo", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+  --radius-2xl: 56px;
+  --radius-3xl: 72px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-charcoal: var(--charcoal);
+}
+
+:root {
+  /* Blue & white palette derived from the logo image */
+  --background: #ffffff;                       /* white page background */
+  --foreground: #072f66;                       /* deep navy for text */
+  --ink: #072f66;                              /* primary ink (navy) */
+  --charcoal: #0b3a5a;                         /* darker accent for emphasis */
+  --cream: #ffffff;                            /* keep as white */
+  --sage: #e9f2fb;                             /* light blue for subtle areas */
+  --sage-deep: #cfe6fb;
+
+  --card: #ffffff;
+  --card-foreground: #072f66;
+  --popover: #ffffff;
+  --popover-foreground: #072f66;
+  --primary: #072f66;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f9ff;
+  --secondary-foreground: #072f66;
+  --muted: #f6f9fd;
+  --muted-foreground: #7a9cc3;
+  --accent: #0b4f8a;                            /* Renaissance blue */
+  --accent-foreground: #ffffff;
+  --destructive: #d64545;
+  --destructive-foreground: #ffffff;
+  --border: rgba(7,47,102,0.08);
+  --input: rgba(7,47,102,0.06);
+  --ring: rgba(11,79,138,0.14);
+
+  --radius: 28px;
+  /* Metallic silver tones */
+  --metal-light: #f6f8fa;
+  --metal-mid: #cfd6dc;
+  --metal-dark: #9aa6b2;
+  --metal-gradient: linear-gradient(135deg, var(--metal-light) 0%, var(--metal-mid) 45%, var(--metal-dark) 100%);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--accent); color: var(--accent-foreground); }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.025em; }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); letter-spacing: -0.03em; font-weight: 800; }
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  /* Momentum-style heading: extreme weight + tight tracking */
+  .display-xl { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.035em; line-height: 0.92; }
+
+  .pill-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 9999px;
+    background: var(--background);
+    color: var(--foreground);
+    border: 2px solid var(--ink);
+    box-shadow: 0 8px 20px rgba(207,230,251,0.06); /* subtle sage-blue glow */
+    font-weight: 700;
+    font-size: 0.875rem;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  }
+  .pill-btn:hover { background: var(--accent); color: var(--accent-foreground); transform: translateY(-1px); box-shadow: 0 14px 36px rgba(207,230,251,0.12); }
+
+  .pill-arrow {
+    display: inline-flex;
+    width: 1.5rem; height: 1.5rem;
+    align-items: center; justify-content: center;
+    border-radius: 9999px;
+  }
+
+  /* Metallic utilities */
+  .metallic-text {
+    background: var(--metal-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+  }
+  .metallic-text::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0.45), rgba(255,255,255,0) 40%);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  .bg-metallic { background: var(--metal-gradient); color: var(--primary-foreground); }
+  .border-metallic { border-image: var(--metal-gradient) 1; border-style: solid; border-width: 2px; }
+
+  .pill-btn.metallic {
+    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(245,249,255,0.9));
+    color: var(--foreground);
+    border: 2px solid rgba(155,166,178,0.5);
+    box-shadow: 0 8px 20px rgba(207,230,251,0.06);
+  }
+  .pill-btn.metallic:hover {
+    background: var(--metal-gradient);
+    color: var(--primary-foreground);
+    border-color: rgba(11,79,138,0.24);
+    box-shadow: 0 18px 40px rgba(11,79,138,0.14);
+    transform: translateY(-1px);
+  }
+
+  /* Mobile menu styling */
+  .menu-item {
+    display: block;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease;
+  }
+  .menu-item:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); transform: translateX(4px); }
+  .menu-divider { height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(7,47,102,0.06)); margin: 0.6rem 0; }
+  .menu-header { display:flex; align-items:center; gap:0.75rem; padding:0.5rem 0; }
+  .menu-logo { height:36px; width:auto; }
+
+  .marquee { animation: marquee 38s linear infinite; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+}
