@@ -1,9 +1,9 @@
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import interview from "@/assets/show-interview.jpg";
-import gala from "@/assets/show-gala.jpg";
-import webcast from "@/assets/show-webcast.jpg";
-import networking from "@/assets/show-networking.jpg";
+import interview from "@/assets/img1.png";
+import gala from "@/assets/img3.jpeg";
+import webcast from "@/assets/img5.jpeg";
+import networking from "@/assets/img7.jpeg";
 
 const SLIDES = [
   {

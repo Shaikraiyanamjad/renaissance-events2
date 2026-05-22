@@ -13,21 +13,21 @@ export function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-12 items-start">
           <div className="md:col-span-3 space-y-2">
             {FOOTER_LINKS[0].map((l) => (
-              <a key={l} href="#" className="block border-t border-white/15 py-3 font-bold hover:text-accent transition-colors">
+              <a key={l} href="#" className="block border-t border-white/15 py-3 font-bold hover:text-white/50 transition-colors">
                 {l}
               </a>
             ))}
           </div>
           <div className="md:col-span-3 space-y-2">
             {FOOTER_LINKS[1].map((l) => (
-              <a key={l} href="#" className="block border-t border-white/15 py-3 font-bold hover:text-accent transition-colors">
+              <a key={l} href="#" className="block border-t border-white/15 py-3 font-bold hover:text-white/50 transition-colors">
                 {l}
               </a>
             ))}
           </div>
           <div className="md:col-span-3 space-y-2">
             {NAV.slice(1).map((n) => (
-              <Link key={n.to} to={n.to} className="block border-t border-white/15 py-3 font-bold hover:text-accent transition-colors">
+              <Link key={n.to} to={n.to} className="block border-t border-white/15 py-3 font-bold hover:text-white/50 transition-colors">
                 {n.label}
               </Link>
             ))}
@@ -35,7 +35,7 @@ export function SiteFooter() {
           <div className="md:col-span-3">
             <a
               href={`mailto:${SITE.emails[1]}`}
-              className="group flex items-center justify-between gap-3 rounded-full bg-accent text-ink px-6 py-3.5 font-bold hover:bg-background transition-colors"
+              className="group flex items-center justify-between gap-3 rounded-full bg-white text-ink px-6 py-3.5 font-bold hover:bg-background transition-colors"
             >
               <span>Contact Us</span>
               <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink text-background group-hover:bg-accent group-hover:text-ink transition-colors">→</span>
