@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import interview from "@/assets/img1.png";
+import interview from "@/assets/img.jpeg";
 import gala from "@/assets/img3.jpg";
 import webcast from "@/assets/img5.jpg";
 import networking from "@/assets/img7.jpg";
