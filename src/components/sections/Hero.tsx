@@ -37,7 +37,7 @@ export function Hero() {
   return (
     <section className="relative bg-background">
       {/* Fullscreen visual (background video) */}
-      <div className="relative h-[88svh] min-h-[600px] w-full overflow-hidden">
+      <div className="relative h-[100svh] min-h-[600px] w-full overflow-hidden">
         <video
           ref={videoRef}
           autoPlay
