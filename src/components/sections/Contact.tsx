@@ -8,7 +8,6 @@ export function Contact() {
       className="border-t border-foreground/10 bg-background py-20 sm:py-24 md:py-32"
     >
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-12 px-4 sm:px-6 md:grid-cols-12 md:items-end md:gap-10 lg:px-8">
-        
         {/* LEFT */}
         <div className="md:col-span-7">
           <p className="text-[10px] uppercase tracking-[0.3em] text-foreground/60 sm:text-xs">

@@ -45,12 +45,17 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <p className="mt-3 text-sm text-muted-foreground">{error.message}</p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="rounded-full bg-foreground text-background px-5 py-2.5 text-sm font-medium"
           >
             Try again
           </button>
-          <a href="/" className="rounded-full border border-border px-5 py-2.5 text-sm">Go home</a>
+          <a href="/" className="rounded-full border border-border px-5 py-2.5 text-sm">
+            Go home
+          </a>
         </div>
       </div>
     </div>

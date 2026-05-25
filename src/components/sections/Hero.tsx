@@ -58,14 +58,32 @@ export function Hero() {
             className="inline-flex items-center justify-center rounded-full bg-background/60 backdrop-blur-sm p-2 text-white/90 hover:bg-background/80 transition-colors"
           >
             {muted ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.5}
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M11 5L6 9H3v6h3l5 4V5z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9a4 4 0 010 6" />
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.5}
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M11 5L6 9H3v6h3l5 4V5z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.54 8.46a5 5 0 010 7.07M19.07 5.93a9 9 0 010 12.73" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.54 8.46a5 5 0 010 7.07M19.07 5.93a9 9 0 010 12.73"
+                />
               </svg>
             )}
           </button>
@@ -96,9 +114,9 @@ export function Hero() {
               We are the modern-day experiential media company.
             </h2>
             <p className="mt-5 text-base sm:text-lg text-foreground/70 max-w-xl text-pretty">
-              In a world that's becoming more artificial, we deliver experiences,
-              broadcasts and stories that make brands matter more — from the floor of
-              every conference, lounge and keynote we cover.
+              In a world that's becoming more artificial, we deliver experiences, broadcasts and
+              stories that make brands matter more — from the floor of every conference, lounge and
+              keynote we cover.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a href="#what-we-do" className="pill-btn metallic">

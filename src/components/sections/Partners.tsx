@@ -1,6 +1,14 @@
 const PARTNERS = [
-  "RENAISSANCE", "MERIDIAN", "ATELIER", "NORTHWIND", "AUREATE",
-  "PARALLEL", "VERTEX", "OBSIDIAN", "HARBOR & CO", "MONARCH",
+  "RENAISSANCE",
+  "MERIDIAN",
+  "ATELIER",
+  "NORTHWIND",
+  "AUREATE",
+  "PARALLEL",
+  "VERTEX",
+  "OBSIDIAN",
+  "HARBOR & CO",
+  "MONARCH",
 ];
 
 export function Partners() {

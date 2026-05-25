@@ -13,8 +13,7 @@ export function SiteHeader() {
   const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () =>
-      setScrolled(window.scrollY > 30);
+    const onScroll = () => setScrolled(window.scrollY > 30);
 
     onScroll();
 
@@ -22,8 +21,7 @@ export function SiteHeader() {
       passive: true,
     });
 
-    return () =>
-      window.removeEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const isHome = location.pathname === "/";
@@ -47,18 +45,12 @@ export function SiteHeader() {
         )}
       >
         <div className="mx-auto flex h-[78px] w-full max-w-[1500px] items-center justify-between px-4 sm:px-6 lg:px-10">
-          
           {/* BRAND */}
-          <Link
-            to="/"
-            className="group flex min-w-0 flex-col justify-center"
-          >
+          <Link to="/" className="group flex min-w-0 flex-col justify-center">
             <h1
               className={cn(
                 "truncate text-[15px] font-semibold uppercase tracking-[0.22em] transition-all sm:text-[18px] lg:text-[20px]",
-                overHero
-                  ? "text-white"
-                  : "text-[#0b3f9c]",
+                overHero ? "text-white" : "text-[#0b3f9c]",
               )}
             >
               Renaissance Events
@@ -67,9 +59,7 @@ export function SiteHeader() {
             <span
               className={cn(
                 "mt-1 text-[8px] uppercase tracking-[0.28em] transition-all sm:text-[9px]",
-                overHero
-                  ? "text-white/70"
-                  : "text-[#0b3f9c]/60",
+                overHero ? "text-white/70" : "text-[#0b3f9c]/60",
               )}
             >
               Meetings & Special Events
@@ -79,8 +69,7 @@ export function SiteHeader() {
           {/* DESKTOP NAV */}
           <nav className="hidden items-center lg:flex">
             {NAV.map((item) => {
-              const active =
-                location.pathname === item.to;
+              const active = location.pathname === item.to;
 
               return (
                 <Link
@@ -91,8 +80,8 @@ export function SiteHeader() {
                     active
                       ? "text-[#0b3f9c]"
                       : overHero
-                      ? "text-white/85 hover:text-white"
-                      : "text-[#0b3f9c]/65 hover:text-[#0b3f9c]",
+                        ? "text-white/85 hover:text-white"
+                        : "text-[#0b3f9c]/65 hover:text-[#0b3f9c]",
                   )}
                 >
                   {item.label}
@@ -123,9 +112,7 @@ export function SiteHeader() {
 
           {/* MOBILE BUTTON */}
           <button
-            onClick={() =>
-              setMobileOpen(!mobileOpen)
-            }
+            onClick={() => setMobileOpen(!mobileOpen)}
             className={cn(
               "flex h-11 w-11 items-center justify-center rounded-full transition-all duration-300 lg:hidden",
               mobileOpen || scrolled
@@ -136,14 +123,7 @@ export function SiteHeader() {
             {mobileOpen ? (
               <X className="h-5 w-5 text-[#0b3f9c]" />
             ) : (
-              <Menu
-                className={cn(
-                  "h-5 w-5",
-                  overHero
-                    ? "text-white"
-                    : "text-[#0b3f9c]",
-                )}
-              />
+              <Menu className={cn("h-5 w-5", overHero ? "text-white" : "text-[#0b3f9c]")} />
             )}
           </button>
         </div>
@@ -187,9 +167,7 @@ export function SiteHeader() {
                 </div>
 
                 <button
-                  onClick={() =>
-                    setMobileOpen(false)
-                  }
+                  onClick={() => setMobileOpen(false)}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0b3f9c]/5"
                 >
                   <X className="h-5 w-5 text-[#0b3f9c]" />
@@ -199,8 +177,7 @@ export function SiteHeader() {
               {/* NAV */}
               <div className="flex flex-1 flex-col px-5 pt-5">
                 {NAV.map((item, index) => {
-                  const active =
-                    location.pathname === item.to;
+                  const active = location.pathname === item.to;
 
                   return (
                     <motion.div
@@ -219,9 +196,7 @@ export function SiteHeader() {
                     >
                       <Link
                         to={item.to}
-                        onClick={() =>
-                          setMobileOpen(false)
-                        }
+                        onClick={() => setMobileOpen(false)}
                         className={cn(
                           "flex items-center justify-between rounded-2xl px-4 py-4 transition-all duration-300",
                           active
@@ -234,12 +209,7 @@ export function SiteHeader() {
                         </span>
 
                         <span
-                          className={cn(
-                            "text-xs",
-                            active
-                              ? "text-white/60"
-                              : "text-[#0b3f9c]/35",
-                          )}
+                          className={cn("text-xs", active ? "text-white/60" : "text-[#0b3f9c]/35")}
                         >
                           0{index + 1}
                         </span>

@@ -108,10 +108,7 @@ function BlockCard({ block, idx }: { block: Block; idx: number }) {
 
       {/* Right image masked into organic shape */}
       <div className="absolute right-0 sm:right-4 md:right-8 top-0 sm:top-6 bottom-0 sm:bottom-6 w-full sm:w-[50%] md:w-[42%]">
-        <div
-          className="relative w-full h-full"
-          style={{ clipPath: `url(#${block.variant})` }}
-        >
+        <div className="relative w-full h-full" style={{ clipPath: `url(#${block.variant})` }}>
           <img
             src={block.img}
             alt=""

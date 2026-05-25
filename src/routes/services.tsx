@@ -6,9 +6,16 @@ export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Services — Special Events Channel" },
-      { name: "description", content: "Event coverage, executive interviews, sponsorships, webcasts, hospitality and luxury event production." },
+      {
+        name: "description",
+        content:
+          "Event coverage, executive interviews, sponsorships, webcasts, hospitality and luxury event production.",
+      },
       { property: "og:title", content: "Services — Special Events Channel" },
-      { property: "og:description", content: "A full-stack production studio for the events industry." },
+      {
+        property: "og:description",
+        content: "A full-stack production studio for the events industry.",
+      },
       { property: "og:url", content: "/services" },
     ],
     links: [{ rel: "canonical", href: "/services" }],
