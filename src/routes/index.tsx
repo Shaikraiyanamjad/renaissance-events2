@@ -5,6 +5,7 @@ import { WhatWeDo } from "@/components/sections/WhatWeDo";
 import { Coverage } from "@/components/sections/Coverage";
 import { Partners } from "@/components/sections/Partners";
 import { Contact } from "@/components/sections/Contact";
+import { Gallery } from "@/components/sections/Gallery";
 import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -29,6 +30,7 @@ function Index() {
       <Carousel />
       <WhatWeDo />
       <Coverage />
+      <Gallery />
       <Partners />
       <Contact />
     </>
